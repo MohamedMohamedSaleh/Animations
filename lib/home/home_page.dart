@@ -1,5 +1,6 @@
 import 'package:animations/core/helper_methods.dart';
 import 'package:animations/home/screens/animated_navigation_drawer.dart';
+import 'package:animations/home/screens/floating_action_button.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -27,6 +28,14 @@ class _MyHomePageState extends State<MyHomePage> {
               title: "Animated Navigation Drawer",
               onTap: () =>
                   navigateTo(context, toPage: const AnimatedNavigationDrawer()),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            AnimationWidget(
+              title: "Floating Action Button",
+              onTap: () => navigateTo(context,
+                  toPage: const FloatingActionButtonScreen()),
             ),
             const SizedBox(
               height: 20,
