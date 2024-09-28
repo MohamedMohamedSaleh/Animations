@@ -1,5 +1,6 @@
 import 'package:animations/core/helper_methods.dart';
 import 'package:animations/home/screens/animated_navigation_drawer.dart';
+import 'package:animations/home/screens/drawer_flip.dart';
 import 'package:animations/home/screens/floating_action_button.dart';
 import 'package:flutter/material.dart';
 
@@ -28,6 +29,14 @@ class _MyHomePageState extends State<MyHomePage> {
               title: "Animated Navigation Drawer",
               onTap: () =>
                   navigateTo(context, toPage: const AnimatedNavigationDrawer()),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            AnimationWidget(
+              title: "Animated Flip Drawer",
+              onTap: () =>
+                  navigateTo(context, toPage: const DrawerFlipAnimation()),
             ),
             const SizedBox(
               height: 20,
@@ -70,9 +79,20 @@ class AnimationWidget extends StatelessWidget {
               ]),
           child: Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Text(
-              title,
-              style: Theme.of(context).textTheme.bodyMedium,
+            child: Row(
+              children: [
+                const Icon(
+                  Icons.animation_rounded,
+                  color: Colors.deepPurpleAccent,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+              ],
             ),
           ),
         ),
